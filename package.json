@@ -1,0 +1,87 @@
+{
+  "name": "apm-app",
+  "productName": "Apm",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "ng": "ng",
+    "build": "ng build",
+    "test": "ng test",
+    "watch": "ng build --watch --configuration development",
+    "electron": "electron .",
+    "electron-build": "ng build --prod && electron .",
+    "start:electron": "ng build --base-href ./ && electron .",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "build-installer": "electron-builder"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~12.0.0",
+    "@angular/common": "~12.0.0",
+    "@angular/compiler": "~12.0.0",
+    "@angular/core": "~12.0.0",
+    "@angular/forms": "~12.0.0",
+    "@angular/platform-browser": "~12.0.0",
+    "@angular/platform-browser-dynamic": "~12.0.0",
+    "@angular/router": "~12.0.0",
+    "bootstrap": "^5.0.1",
+    "font-awesome": "^4.7.0",
+    "os-utils": "^0.0.14",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.1.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^12.2.17",
+    "@angular/cli": "~12.0.0",
+    "@angular/compiler-cli": "~12.0.0",
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "@types/jasmine": "~3.6.0",
+    "@types/node": "^12.11.1",
+    "concurrently": "^7.1.0",
+    "electron": "^18.1.0",
+    "electron-builder": "^23.0.3",
+    "electron-package": "^0.1.0",
+    "electron-packager": "^15.5.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "package": "^1.0.1",
+    "packager": "^0.1.9",
+    "typescript": "~4.2.3"
+  },
+  "keywords": [],
+  "author": "Kt",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "apm-app"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
